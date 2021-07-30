@@ -22,33 +22,30 @@ def home():
 @app.route('/breastcancer')
 def breastcancer():
     return render_template("cancer.html")
+@app.route('/cancerp',methods=['POST','GET'])
+def cancer():
+    model2= pickle.load(open('modelbc1.pkl', 'rb'))
+
+    features2=[int(x) for x in request.form.values()]
+
+    final2=[np.array(features2)]
+
+    print(features2)
+
+    print(final2)
+
+    prediction2=model2.predict(final2)
 
 
+    output =  prediction2
 
-@app.route('/cancerp',methods=['POST'])
-def cancerp():
+    if output==1:
 
-        model2 = pickle.load(open('modelbc1.pkl', 'rb'))
+        return render_template('rdiabetes.html', pred='The patient is diagnosed with Diabetes. ')
 
-        features2 = [int(x) for x in request.form.values()]
+    else:
+        return render_template('rdiabetes.html',pred='The patient is not diagnosed with Diabetes .')
 
-        final2 = [np.array(features2)]
-
-        print(features2)
-
-        print(final2)
-
-        prediction2 = model2.predict(final2)
-
-        output = prediction2
-
-
-   if output == 1:
-
-      return render_template('rdiabetes.html', pred='The patient is diagnosed with Diabetes. ')
-
-   else:
-       return render_template('rdiabetes.html', pred='The patient is not diagnosed with Diabetes .')
 
 
 @app.route('/diabetes')
