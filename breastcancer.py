@@ -24,7 +24,7 @@ print(ydata)
 ydata = np.asarray([1 if c == 'M' else 0 for c in ydata])
 print(ydata)
 print(xdata)
-cols = ['concave points_mean','area_mean','radius_mean','perimeter_mean','concavity_mean','smoothness_se']
+cols = ['concave points_mean','area_mean','radius_mean','perimeter_mean','concavity_mean']
 
 
 xdata = df[cols]
@@ -50,8 +50,8 @@ print('Accuracy : {}'.format(accuracy_score(y_test, y_pred)))
 #print('Accuracy : {}'.format(accuracy_score(y_test, y_predlog)))
 #same both
 
-pickle.dump(model,open('modelcancer.pkl','wb'))
-model=pickle.load(open('modelcancer.pkl','rb'))
+pickle.dump(model,open('modelbcancer.pkl','wb'))
+model=pickle.load(open('modelbcancer.pkl','rb'))
 
 
 

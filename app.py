@@ -26,7 +26,7 @@ def breastcancer():
 
 @app.route('/cancerp',methods=['POST','GET'])
 def cancerp():
-    model2= pickle.load(open('modelcancer.pkl', 'rb'))
+    model2= pickle.load(open('modelbcancer.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
 
