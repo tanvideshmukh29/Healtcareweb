@@ -42,13 +42,13 @@ def cancerp():
 
         output = prediction2
 
-        if output == 1:
 
-            return render_template('rheart.html', pred='The patient is diagnosed with heartpeoblem. ')
+   if output == 1:
 
-        else:
-            return render_template('rheart.html', pred='The patient is not diagnosed with heartproblem.')
+      return render_template('rdiabetes.html', pred='The patient is diagnosed with Diabetes. ')
 
+   else:
+       return render_template('rdiabetes.html', pred='The patient is not diagnosed with Diabetes .')
 
 
 @app.route('/diabetes')
