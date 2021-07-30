@@ -43,10 +43,10 @@ def cancerp():
 
     if output==1:
 
-        return render_template('resultcancer1.html', pred='The patient is diagnosed with Cancer. ')
+        return render_template('rheart.html', pred='The patient is diagnosed with Cancer. ')
 
     else:
-        return render_template('resultcancer1.html',pred='The patient is not diagnosed with Cancer .')
+        return render_template('rheart.html',pred='The patient is not diagnosed with Cancer .')
 
 @app.route('/diabetes')
 def diabetes():
@@ -129,10 +129,10 @@ def kidenypredict():
 
     if output==1:
 
-        return render_template('rkidney.html', pred='The patient is diagnosed with kidneyproblem. ')
+        return render_template('rheart.html', pred='The patient is diagnosed with kidneyproblem. ')
 
     else:
-        return render_template('rkidney.html',pred='The patient is not diagnosed with kidneyproblem.')
+        return render_template('rheart.html',pred='The patient is not diagnosed with kidneyproblem.')
 
 
 @app.route('/liver')
