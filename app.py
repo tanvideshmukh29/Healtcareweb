@@ -25,7 +25,7 @@ def breastcancer():
 
 
 
-@app.route('/cancerp',methods=['POST','GET'])
+@app.route('/cancerp',methods=['POST'])
 def cancerp():
 
         model2 = pickle.load(open('modelbc1.pkl', 'rb'))
