@@ -23,8 +23,9 @@ def home():
 def breastcancer():
     return render_template("cancer.html")
 
-@app.route('/cancerpred',methods=['POST','GET'])
-def cancerpred():
+
+@app.route('/cancer',methods=['POST','GET'])
+def cancer():
     model2= pickle.load(open('modelcancer.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
@@ -42,11 +43,10 @@ def cancerpred():
 
     if output==1:
 
-        return render_template('resultcancer1.html', pred='The patient is  diagnosed with Breast Cancer. ')
+        return render_template('resultcancer1.html', pred='The patient is diagnosed with Cancer. ')
 
     else:
-        return render_template('resultcancer1.html',pred='The patient is not diagnosed with Breast Cancer .')
-
+        return render_template('resultcancer1.html',pred='The patient is not diagnosed with Cancer .')
 
 @app.route('/diabetes')
 def diabetes():
