@@ -26,7 +26,7 @@ def breastcancer():
 
 @app.route('/cancerp',methods=['POST','GET'])
 def cancerp():
-    model2= pickle.load(open('modelbcancer.pkl', 'rb'))
+    model2= pickle.load(open('modelbc1.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
 
@@ -112,7 +112,7 @@ def kidney():
 
 @app.route('/kidneypredict',methods=['POST','GET'])
 def kidenypredict():
-    model2= pickle.load(open('modelkidney.pkl', 'rb'))
+    model2= pickle.load(open('modelkidney1.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
 
