@@ -23,29 +23,33 @@ def home():
 def breastcancer():
     return render_template("cancer.html")
 
-def ValuePredictor(to_predict_list, size):
-    to_predict = np.array(to_predict_list).reshape(1,size)
-    if(size==5):
-        loaded_model = pickle.load(open('modelbc1.pkl', 'rb'))
-        result = loaded_model.predict(to_predict)
-    return result[0]
+
 
 @app.route('/cancerp',methods=['POST','GET'])
 def cancerp():
-    if request.method == "POST":
-        to_predict_list = request.form.to_dict()
-        to_predict_list = list(to_predict_list.values())
-        to_predict_list = list(map(float, to_predict_list))
-        # cancer
-        if (len(to_predict_list) == 5):
-            result = ValuePredictor(to_predict_list, 5)
 
-    if (int(result) == 1):
+        model2 = pickle.load(open('modelbc1.pkl', 'rb'))
 
-        return render_template('rheart.html', pred='The patient is diagnosed with Cancer. ')
+        features2 = [int(x) for x in request.form.values()]
 
-    else:
-        return render_template('rheart.html',pred='The patient is not diagnosed with Cancer .')
+        final2 = [np.array(features2)]
+
+        print(features2)
+
+        print(final2)
+
+        prediction2 = model2.predict(final2)
+
+        output = prediction2
+
+        if output == 1:
+
+            return render_template('rheart.html', pred='The patient is diagnosed with heartpeoblem. ')
+
+        else:
+            return render_template('rheart.html', pred='The patient is not diagnosed with heartproblem.')
+
+
 
 @app.route('/diabetes')
 def diabetes():

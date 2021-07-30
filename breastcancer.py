@@ -30,6 +30,7 @@ print('Shape test set: X:{}, y:{}'.format(X_test.shape, y_test.shape))
 model = ensemble.RandomForestClassifier()
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
+
 print('Accuracy : {}'.format(accuracy_score(y_test, y_pred)))
 
 
