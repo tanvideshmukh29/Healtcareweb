@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<link rel="stylesheet" href="/static/cancer.css">
+<div class="intro">
+    <h1 class="text-center text-capitalize pt-5">Know your chances of getting diabetes in one Click!</h1>
+</div>
+
+
+
+<div class="middlepart">
+    <div class="image">
+
+
+        <img class='img1' src="/static/medical-tools.png">
+
+
+    </div>
+    <form action="/diabete" method="post">
+        <div class="form-group">
+            <!-- TODO : Year to accept only year date picker -->
+            <label for="Pregnancies">No. of Pregnencies</label>
+            <input class="form-control" type="number" id="Pregnancies" name="Pregnancies" required="required"
+                placeholder="No. of Pregnencies">
+        </div>
+        <div class="form-group">
+            <label for="Glucose">Glucose Level</label>
+            <input class="form-control" type="number" step="any" id="Glucose" name="Present_Price" required="required"
+                placeholder="Glucose Level">
+        </div>
+        <div class="form-group">
+            <label for="BloodPressure">Current Blood Pressure</label>
+            <input class="form-control" type="number" id="BloodPressure" name="BloodPressure" required="required"
+                placeholder="Current Blood Pressure">
+        </div>
+        <div class="form-group">
+            <label for="BMI">Enter the Body Mass Index</label>
+            <input class="form-control" type="number" id="BMI" name="BMI" required="required"
+                placeholder="Body Mass Index">
+        </div>
+        <div class="form-group">
+            <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+            <input class="form-control" type="number" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction"
+                required="required" placeholder="Diabetes Pedigree Function">
+        </div>
+        <div class="form-group">
+            <label for="Age">Age</label>
+            <input class="form-control" type="number" id="Age" name="Age" required="required" placeholder="Age">
+        </div>
+
+        <div class="predictionbutton">
+
+            <button type="submit" class="btn btn-danger predictionbutton">Predict</button>
+        </div>
+    </form>
+</div>
+<div>
+    <h1 class="predict">{{pred}}</h1>
+</div>
+{% endblock body %}

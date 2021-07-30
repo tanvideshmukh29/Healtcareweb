@@ -1,0 +1,61 @@
+   
+    *{
+    margin:0px;
+    padding:0px;
+    
+  
+    box-sizing: border-box;
+
+
+
+    
+}
+    
+    .middlepart{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+   form{
+       width: 40%;
+       height: auto;
+       margin: 14px;
+       box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.3);
+            background: #fff;
+   }
+   .form-group{
+       padding: 12px;
+   }
+  .predictionbutton{
+     width:300px;
+      margin: auto;
+
+  }
+  
+  .btn-danger{
+      color: aqua !important;
+      margin-bottom: 5px;
+  }
+  .predict{
+      margin: 7px;
+      margin-top: 12px;
+      text-align: center;
+  }
+  @media screen and (max-width: 670px){
+      .middlepart{
+          margin: 8px;
+      }
+       form{
+           width: 100%;
+       }
+       .img1{
+           width: 100%;
+       }
+
+  }
+        
+    
+      
+
+   

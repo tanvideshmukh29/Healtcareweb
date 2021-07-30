@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/cancer.css">
+<div class="intro">
+  <h1 class="text-center text-capitalize pt-5">Know your chances of getting KidneyProblem in one Click!</h1>
+</div>
+<div class="middlepart">
+  <div class="image">
+    <img class='img1' src="/static/kdny.png">
+  </div>
+  <form action="/kidneypredict" method="post">
+    <div class="form-group">
+      <!-- TODO : Year to accept only year date picker -->
+      <label for="bp">Blood Pressure</label>
+      <input class="form-control" type="number" id="bp" name="Year" required="required" placeholder="Blood Pressure">
+    </div>
+
+    <div class="form-group">
+      <label for="sg">Specific Gravity</label>
+      <input class="form-control" type="number" step="any" id="sg" name="sg" required="required"
+        placeholder="Specific Gravity">
+    </div>
+
+    <div class="form-group">
+      <label for="al">Albumin</label>
+      <input class="form-control" type="number" id="al" name="al" required="required" placeholder="Albumin">
+    </div>
+
+    <div class="form-group">
+      <label for="su">Blood Sugar Level</label>
+      <input class="form-control" type="number" id="su" name="su" required="required" placeholder="Blood Sugar Level">
+    </div>
+
+    <div class="form-group">
+      <label for="rbc">Red Blood Cells Count</label>
+      <input class="form-control" type="number" id="rbc" name="rbc" required="required"
+        placeholder="Red Blood Cells Count">
+    </div>
+
+    <div class="form-group">
+      <label for="pc">Pus Cell Count</label>
+      <input class="form-control" type="number" id="pc" name="pc" required="required" placeholder="Pus Cell Count">
+    </div>
+
+    <div class="form-group">
+      <label for="pcc">Pus Cell Clumps</label>
+      <input class="form-control" type="number" id="pcc" name="pcc" required="required" placeholder="Pus Cell Clumps">
+    </div>
+
+    <div class="predictionbutton">
+
+      <button type="submit" class="btn btn-danger predictionbutton">Predict</button>
+    </div>
+
+
+
+
+  </form>
+</div>
+<div class="predict">
+  <h1 class="h3">{{pred}}</h1>
+</div>
+{% endblock body %}
