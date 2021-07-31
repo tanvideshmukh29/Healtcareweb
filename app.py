@@ -131,10 +131,10 @@ def kidenypredict():
 
     if output==1:
 
-        return render_template('rheart.html', pred='The patient is diagnosed with kidneyproblem. ')
+        return render_template('kidney.html', pred='The patient is diagnosed with kidneyproblem. ')
 
     else:
-        return render_template('rheart.html',pred='The patient is not diagnosed with kidneyproblem.')
+        return render_template('kidney.html',pred='The patient is not diagnosed with kidneyproblem.')
 
 
 @app.route('/liver')
