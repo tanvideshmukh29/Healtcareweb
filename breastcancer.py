@@ -37,5 +37,5 @@ print('Accuracy : {}'.format(accuracy_score(y_test, y_pred)))
 
 
 
-pickle.dump(model,open('modelbc1.pkl','wb'))
-model=pickle.load(open('modelbc1.pkl','rb'))
+pickle.dump(model,open('modelcan.pkl','wb'))
+model=pickle.load(open('modelcan.pkl','rb'))
