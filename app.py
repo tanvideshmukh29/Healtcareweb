@@ -108,13 +108,15 @@ def heartpredict():
         return render_template('rheart.html',pred='The patient is not diagnosed with heartproblem.')
 
 
-@app.route('/kidney')
-def kidney():
-    return render_template("kidney.html")
 
-@app.route('/kidneypredict',methods=['POST','GET'])
-def kidenypredict():
-    model2= pickle.load(open('modelkidney1.pkl', 'rb'))
+
+@app.route('/liver')
+def liver():
+    return render_template("liver.html")
+
+@app.route('/liverpredict',methods=['POST','GET'])
+def liverpredict():
+    model2= pickle.load(open('modelliver.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
 
@@ -131,19 +133,19 @@ def kidenypredict():
 
     if output==1:
 
-        return render_template('kidney.html', pred='The patient is diagnosed with kidneyproblem. ')
+        return render_template('rliver.html', pred='The patient is diagnosed with liverproblem. ')
 
     else:
-        return render_template('kidney.html',pred='The patient is not diagnosed with kidneyproblem.')
+        return render_template('rliver.html',pred='The patient is not diagnosed with liverproblem.')
 
 
-@app.route('/liver')
-def liver():
-    return render_template("liver.html")
+@app.route('/kidney')
+def kidney():
+    return render_template("kidney.html")
 
-@app.route('/liverpredict',methods=['POST','GET'])
-def liverpredict():
-    model2= pickle.load(open('modelliver.pkl', 'rb'))
+@app.route('/kpredict',methods=['POST','GET'])
+def kpredict():
+    model2= pickle.load(open('modelkidney1.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
 
