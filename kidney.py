@@ -25,7 +25,7 @@ df['dm'] = df['dm'].replace(to_replace={'\tno':0,'\tyes':1,' yes':1, '':np.nan})
 df.drop('id',axis=1,inplace=True)
 df = df.dropna(axis=0)
 
-cols = ['bp', 'sg', 'al', 'su', 'rbc', 'pc', 'pcc']
+cols = ['bp', 'rbc', 'pc', 'pcc',  'ba', 'appet']
 X = df[cols]
 y = df['class']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.33, random_state=44, stratify= y)
