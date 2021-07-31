@@ -28,7 +28,7 @@ def breastcancer():
 def cancerpredict():
     model2= pickle.load(open('modelcan.pkl', 'rb'))
 
-    features2=[int(x) for x in request.form.values()]
+    features2=[float(x) for x in request.form.values()]
 
     final2=[np.array(features2)]
 
@@ -41,12 +41,12 @@ def cancerpredict():
 
     output =  prediction2
 
-    if output==1:
+    if int(output)>=1:
 
-        return render_template('rdiabetes.html', pred='The patient is diagnosed with Diabetes. ')
+        return render_template('rdiabetes.html', pred='The patient is diagnosed with Cancer. ')
 
     else:
-        return render_template('rdiabetes.html',pred='The patient is not diagnosed with Diabetes .')
+        return render_template('rdiabetes.html',pred='The patient is not diagnosed with Cancer .')
 
 
 
@@ -147,7 +147,7 @@ def kidney():
 def kpredict():
     model2= pickle.load(open('modelkidney1.pkl', 'rb'))
 
-    features2=[int(x) for x in request.form.values()]
+    features2=[float(x) for x in request.form.values()]
 
     final2=[np.array(features2)]
 
@@ -159,13 +159,14 @@ def kpredict():
 
 
     output =  prediction2
+    print(output)
 
-    if output==1:
+    if int(output)>=1:
 
-        return render_template('rliver.html', pred='The patient is diagnosed with liverproblem. ')
+        return render_template('rliver.html', pred='The patient is diagnosed with kidneyproblem. ')
 
     else:
-        return render_template('rliver.html',pred='The patient is not diagnosed with liverproblem.')
+        return render_template('rliver.html',pred='The patient is not diagnosed with kidneyproblem.')
 
 
 
