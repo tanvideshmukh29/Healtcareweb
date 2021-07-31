@@ -22,9 +22,10 @@ def home():
 @app.route('/breastcancer')
 def breastcancer():
     return render_template("cancer.html")
-@app.route('/cancerp',methods=['POST','GET'])
+
+@app.route('/heartpredict',methods=['POST','GET'])
 def cancer():
-    model2= pickle.load(open('modelbc1.pkl', 'rb'))
+    model2= pickle.load(open('modelheart.pkl', 'rb'))
 
     features2=[int(x) for x in request.form.values()]
 
