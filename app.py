@@ -41,7 +41,8 @@ def cancerpredict():
 
     output =  prediction2
 
-    if int(output)>=1:
+    if int(output)>
+        =1:
 
         return render_template('rdiabetes.html', pred='The patient is diagnosed with Cancer. ')
 
